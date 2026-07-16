@@ -48,3 +48,11 @@ test("shift a string of three characters", () => {
 test("works for varying cases", () => {
     expect(caesarCipher("HeLLo", 3)).toMatch(/KhOOr/);
 });
+
+test("non-alphabetical stay the same (1)", () => {
+    expect(caesarCipher('Hello, World!', 3)).toMatch('Khoor, Zruog!')
+})
+
+test("non-alphabetical stay the same (2)", () => {
+    expect(caesarCipher('Z!z', 3)).toMatch('A!a')
+})
