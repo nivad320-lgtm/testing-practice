@@ -3,6 +3,7 @@ import {
     reverseString,
     calculator,
     caesarCipher,
+    analyzeArray
 } from "./practice.js";
 
 test("first character capitalized", () => {
@@ -55,4 +56,20 @@ test("non-alphabetical stay the same (1)", () => {
 
 test("non-alphabetical stay the same (2)", () => {
     expect(caesarCipher('Z!z', 3)).toMatch('A!a')
+})
+
+test("analyzeArray exists", () => {
+    expect(analyzeArray).toBeDefined();
+});
+
+test("analyzeArray returns length", () => {
+    expect(analyzeArray([1,8,3,4,2,6])).toMatchObject({ length: 6})
+})
+
+test("analyzeArray returns average", () => {
+    expect(analyzeArray([1,8,3,4,2,6])).toMatchObject({ average: 4, length: 6})
+})
+
+test("analyzeArray returns min", () => {
+    expect(analyzeArray([1,8,3,4,2,6])).toMatchObject({ average: 4, length: 6, min: 1})
 })
